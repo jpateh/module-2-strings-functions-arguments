@@ -48,7 +48,17 @@ int main(int argc, char* argv[])
 // Algorithm: Iterate from forward to back, and from back to forward, and check that they are the same.
 bool check1(string stringToCheck)
 {
-    // TODO: Write your code here.
+    int leftpoint = 0;
+    int rightpoint = stringToCheck.length() - 1;
+
+    while (leftpoint < rightpoint) {
+        if(stringToCheck[leftpoint] != stringToCheck[rightpoint]){
+            return false;
+        }
+    leftpoint ++;
+    rightpoint --;
+    }
+    return true;
 
 }
 
@@ -56,6 +66,10 @@ bool check1(string stringToCheck)
 // Algorithm: Create a copy of the string, in reverse, and check that the copy matches the original.
 bool check2(string stringToCheck)
 {
-    // TODO: Write your code here.
+  //Using an iterator within the string library to create the reverse string. 
+   string revString = string(stringToCheck.rbegin(), stringToCheck.rend());
+   
+   //Check to see if original string matches the reversed one created above.
+   return stringToCheck == revString;
 
 }
